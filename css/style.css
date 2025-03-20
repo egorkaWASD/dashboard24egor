@@ -1,0 +1,1626 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* глобальные стили */
+:root {
+    --white:#FBFCFE;
+    --grey:#E6E8EC;
+    --lighly-dark-grey:#C7CBD9;
+    --semi-dark:#808080;
+    --dark-grey:#595959;
+    --highlight-purple:#C7CEFF;
+    --purple-grey-hue:#C4C7DB;
+    --light-purple:#8593ED;
+    --purple: #5A6ACF;
+    --darkest-purple:#5A67BA;
+    --swamp-color:#1F384C;
+    --red:#F2383A;
+    --green:#149D52;
+    --aside:#F1F2F7;
+    --titles:#1F384C;
+}
+
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    appearance: none; /*сбрасывает внешний вид элемента во всех браузерах*/
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    width: 1440px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #737B8B;
+}
+
+p {
+    color: var(--color-dark-variant);
+}
+
+.main {
+    padding-left: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 240px auto;
+    width: 100%;
+}
+
+/* левая колонка */
+.left {
+    height: 100vh;
+    background-color: var(--aside);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    margin-left: 2rem;
+}
+
+.logo {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3.75rem;
+    position: relative;
+}
+
+.active {
+    background-color: #e4e7f5;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    margin-left: 20px;
+    padding: 0;
+    
+}
+
+.active h3 {
+    color: var(--darkest-purple);
+    font-weight: 500;
+}
+
+.active .menu__link {
+    padding: 0;
+    text-align: left;
+    margin-left: 12px;
+}
+
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    gap: 1.5rem;
+    margin-left: 2rem;
+    height: 2.6rem;
+}
+
+.name {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--purple);
+    font-size: 11px;
+}
+
+.menu, .others {
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-left: 2rem;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.others {
+    margin-top: 2rem;
+}
+
+
+.menu__title {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--dark-grey);
+}
+
+.main-top {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    border-bottom: 0.5px solid #C8CBD9;
+    height: 64px;
+}
+
+.profile {
+    display: flex;
+    text-align: right;
+    gap: 1.1rem;
+    margin: 0.8rem 0.8rem 0.8rem 0;
+    align-items: center;
+}
+
+.profile p {
+    font-size: 0.8rem;
+    letter-spacing: 0.5;
+    font-weight: 400;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFE6CC;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.info p {
+    margin-bottom: 0.2rem;
+    color: var(--swamp-color);
+}
+
+.main__title {
+    margin-bottom: 1rem;
+}
+
+/* ОСНОВА */
+
+.dashboard {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--titles);
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+
+.main__grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto auto;
+    align-items: start;
+}
+
+/* ГЛИСТОГРАММА */
+.histogram_container {
+    grid-column: span 2 / span 2;
+    border-right: 0.5px solid #e4e6ee;
+    padding-right: 3rem;
+    border-bottom: 0.5px solid #e4e6ee;
+    padding-bottom: 2rem;
+}
+
+.histogram__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}
+
+.histogram__top h2 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: black !important;
+}
+
+.btn {
+    background-color: #FBFCFE; 
+    padding: 5px 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--purple);
+    border: 0.5px solid #DDE4F0;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px 0px rgba(34, 60, 80, 0.16);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: 0.5px solid var(--purple);
+    box-shadow: none;
+}
+
+.btn:focus {
+    border: 0.5px solid var(--white);
+    box-shadow: none;
+    background-color: var(--darkest-purple); 
+    color: var(--white);
+}
+
+.histogram__middle h2 {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.middle__analytics {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.middle__analytics svg {
+    height: 25px;
+}
+
+.middle__analytics p {
+    font-size: 12px;
+}
+
+.green {
+    color: var(--green);
+    font-weight: 600;
+}
+
+
+
+.chart .pipe {
+    background: var(--grey) none repeat scroll 0 0;
+    width: 100%;
+    height: 8px;
+    margin-bottom: 1.2rem;
+}
+
+.chart p {
+    margin: 0 0 5px;
+    font-size: 11px;
+    color: var(--lighly-dark-grey);
+    font-weight: 400;
+}
+
+.chart .pipe > div {
+    background: var(--purple) none repeat scroll 0 0;
+    height: 8px;
+}
+
+.sector1 {
+    width: 20%;
+}
+
+.sector2 {
+    width: 30%;
+}
+.sector3 {
+    width: 40%;
+}
+.sector4 {
+    width: 10%;
+}
+
+.last, .stuff__title, .last_order {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 18px;
+}
+
+.last p, .last_order p {
+    font-size: 12px;
+    color: #121212;
+    font-weight: 400;
+}
+
+/* ДИАГРАММА */
+
+.diagram-container {
+    padding: 0 1rem 0.8rem;
+    border-bottom: 0.5px solid #e4e6ee;
+}
+
+.date {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--semi-dark);
+    margin-bottom: 1rem;
+}
+
+.container__diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.chart-info {
+    width: 140px;
+    height: 109px;
+}
+
+.info-box {
+    background: #37375c;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-left: -3rem;
+    margin-top: -4rem;
+}
+
+.info-box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    border-width: 5px;
+    margin-top: -5px;
+    border-style: solid;
+    border-color: transparent #343a40 transparent transparent;
+    top: 105%;
+    transform: rotate(-90deg);
+}
+
+.orders {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.info-title {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.time {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--purple-grey-hue);
+}
+
+
+.diagram__stuff-grid {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    margin-top: 1.9rem;
+}
+
+.stuff_p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.perc {
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+/* РЕЙТИНГ */
+
+.rating {
+    padding: 1rem 1rem 0 1rem;
+    border-right: 0.5px solid #e4e6ee;
+}
+
+.rating__h2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: black !important;
+    margin-bottom: 0.8rem;
+}
+
+.rating-text {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.circles-svg {
+    margin-top: 0.5rem;
+}
+
+/* ЕДА */
+
+.food {
+    padding: 1rem 1rem 0 1rem;
+    border-right: 0.5px solid #e4e6ee;
+}
+
+.food_pic {
+    max-width: 50px;
+    max-height: 50px;
+    justify-content: flex-start;
+    object-fit: contain;
+}
+
+.food__item {
+    display: grid;
+    grid-template-columns: 50px auto 1fr;
+    margin-top: 1rem;
+    justify-content: start;
+    border-bottom: 0.5px solid #DBE5EB;
+}
+
+.food__list .last_one {
+    border-bottom: 0;
+}
+
+.food .rating__h2 {
+    padding: 1rem;
+}
+
+.food__item h3, p {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.food__item h3 {
+    color: black;
+    padding-left: 2rem;
+}
+
+.food__item p {
+    padding-left: 4rem;
+    text-align: right;
+}
+
+.red {
+    color: var(--red);
+}
+
+/* ОРДЕР */
+.order {
+    padding: 2rem;
+}
+
+.chart_c p {
+    margin-top: 1rem;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.chart_order {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    padding: 1rem 1rem 0 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.bar {
+    width: 20px;
+    height: 122px;
+    background-color: #e5e5e5;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.filled {
+    width: 100%;
+    background-color: #4f5bd5;
+}
+
+.row {
+    gap: 35px;
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 18px;
+}
+
+.last_order {
+    margin-top: 1rem;
+}
+
+.order__report {
+    padding: 10px;
+
+}
+
+.close {
+    display: none;
+  }
+#menu-btn {
+    display: none;
+}
+
+/* АНИМАЦИИ */
+.animate {
+    animation-duration: 0.5s;
+    animation-name: slidein;
+}
+  
+@keyframes slidein {
+    from {
+        opacity: 0;
+      margin-left: -10%;
+    }
+  
+    to {
+        opacity: 1;
+      margin-left: 0%;
+    }
+}
+
+.fade-out {
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+
+
+/* АДАПТАЦИЯ (СПАСАЙТЕ) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    body {
+        width: 100%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 200px auto;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .left {
+        height: 135vh;
+    }
+
+    .main__title {
+        margin-bottom: 0.5rem;
+    }
+
+    .active {
+        width: 160px;
+        margin-left: 20px;
+      }
+
+    .main {
+        padding: 1.3rem;
+    }
+
+    .main-top {
+        height: 56px;
+    }
+
+    .main__grid {
+        grid-template-columns: auto auto;
+        grid-template-rows: 20rem 20rem;
+        width: 100%;
+    }
+
+    .histogram_container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.5px solid #e4e6ee;
+        padding-bottom: 0rem;
+        padding-right: 10px;
+    }
+
+    .histogram {
+        padding-right: 0rem;
+    }
+
+    .last {
+        padding-bottom: 1rem;
+        margin: 0;
+    }
+
+    .date {
+        margin-bottom: 0;
+    }
+
+    /* диаграмма */
+
+    .diagram-container {
+        margin-top: 0.2rem;
+        padding: 0 0 5px 5px;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+
+    .diagram svg {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .chart-info {
+        width: 90px;
+        height: 90px;
+    }
+
+    .container__diagram {
+        padding-top: 0;
+    }
+
+    .chart-info orders {
+        font-size: 6px;
+    }
+    
+    .diagram__stuff-grid {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+    }
+
+    .diagram__stuff__container {
+        padding-left: 1rem;
+    }
+
+    .diagram-container .btn {
+        margin-top: 12px;
+    }
+
+    .btn {
+        padding: 8px 13px;
+        margin-right: 1rem;
+        font-size: 14px;
+    }
+
+    /* рейтинг */
+
+    .rating {
+        padding: 0.97rem 1rem;
+        border-right: 0;
+        border-left: 0.5px solid #e4e6ee;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+    
+    .rating__h2 {
+        margin-bottom: 0rem;
+    }
+    
+    .circles {
+        max-width: 500px;
+    }
+
+    .circles-svg {
+        margin-top: 0rem;
+    }
+
+    /* фуд */
+
+    .food {
+        border: none;
+        padding: 3rem 1rem 0 1rem;
+        margin-top: 1.4rem;
+    }
+
+    .food__item {
+        grid-template-columns: 70px auto 1fr;
+        margin-top: 1rem;
+        justify-content: start;
+        font-size: 16px;
+    }
+    
+    .food .rating__h2 {
+        padding: 0;
+    }
+    
+    .food__item h3 {
+        padding-left: 1rem;
+        font-size:14px;
+    }
+    
+    .food__item p {
+        margin-right: 3rem;
+        font-size:13px;
+    }
+
+    /* ордер */
+    .order {
+        padding: 2rem 1rem;
+        border-left: 0.5px solid #e4e6ee;
+        margin-top: 1.4rem;
+    }
+    
+    .order .btn {
+        margin-right: 0rem;
+    }
+    .chart_c p {
+        margin-top: 0rem;
+    }
+    
+    .chart_order {
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .filled {
+        width: 100%;
+        background-color: #4f5bd5;
+    }
+    
+    .row {
+        justify-content: space-between;
+    }
+    
+    .last_order {
+        margin-top: 1rem;
+        padding-left: 1rem;
+        
+    }
+
+    .last_order p {
+        font-size: 14px;
+    }
+    
+}
+
+@media (min-width:1024px) and (max-width: 1199px) {
+    body {
+        width: 100%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 200px auto;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .left {
+        height: 135vh;
+    }
+
+    .menu, .others {
+        font-size: 14px;
+    }
+
+    .menu__link {
+        margin-left: 1rem;
+    }
+
+    .menu__title {
+        font-size: 14px;
+    }
+
+    .main__title {
+        margin-bottom: 0.5rem;
+    }
+
+    .active {
+        width: 150px;
+        margin-left: 5px;
+      }
+
+    .main {
+        padding: 1.3rem;
+    }
+
+    .main-top {
+        height: 56px;
+    }
+
+    .main__grid {
+        grid-template-columns: auto auto;
+        grid-template-rows: 20rem 20rem;
+        width: 100%;
+    }
+
+    .histogram_container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.5px solid #e4e6ee;
+        padding-bottom: 0rem;
+        padding-right: 10px;
+    }
+
+    .histogram {
+        padding-right: 0rem;
+    }
+
+    .last {
+        padding-bottom: 1rem;
+        margin: 0;
+    }
+
+    .date {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    /* диаграмма */
+
+    .diagram-container {
+        margin-top: 1rem;
+        padding: 0 0 5px 5px;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+
+    .middle__analytics p {
+        font-size: 14px;
+    }
+
+    .histogram .chart p {
+        font-size: 14px;
+    }
+
+    .diagram svg {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .chart-info {
+        width: 90px;
+        height: 90px;
+    }
+
+    .container__diagram {
+        padding-top: 0;
+    }
+
+    .chart-info orders {
+        font-size: 6px;
+    }
+    
+    .diagram__stuff-grid {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+    }
+
+    .diagram__stuff__container {
+        padding-left: 1rem;
+    }
+
+    .diagram-container .btn {
+        margin-top: 12px;
+    }
+
+    .btn {
+        padding: 8px 13px;
+        margin-right: 1rem;
+        font-size: 14px;
+    }
+
+    /* рейтинг */
+
+    .rating {
+        margin-top: 1rem;
+        padding: 0.80rem 1rem;
+        border-right: 0;
+        border-left: 0.5px solid #e4e6ee;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+    
+    .rating__h2 {
+        margin-bottom: 0rem;
+        font-size: 16px;
+    }
+    
+    .circles {
+        max-width: 500px;
+    }
+
+    .circles-svg {
+        margin-top: 0rem;
+    }
+
+    /* фуд */
+
+    .food {
+        border: none;
+        padding: 3rem 1rem 0 1rem;
+        margin-top: 1.4rem;
+    }
+
+    .food__item {
+        grid-template-columns: 70px auto 1fr;
+        margin-top: 1rem;
+        justify-content: start;
+        font-size: 16px;
+    }
+    
+    .food .rating__h2 {
+        padding: 0;
+    }
+    
+    .food__item h3 {
+        padding-left: 1rem;
+        font-size:14px;
+    }
+    
+    .food__item p {
+        margin-right: 3rem;
+        font-size:13px;
+    }
+
+    /* ордер */
+    .order {
+        padding:1rem;
+        border-left: 0.5px solid #e4e6ee;
+        margin-top: 3rem;
+    }
+
+    .order h2 {
+        font-size: 14px;
+    }
+    
+    .order .btn {
+        margin-right: 0rem;
+    }
+    .chart_c p {
+        margin-top: 0rem;
+    }
+    
+    .chart_order {
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .filled {
+        width: 100%;
+        background-color: #4f5bd5;
+    }
+    
+    .row {
+        justify-content: space-between;
+    }
+    
+    .last_order {
+        margin-top: 1rem;
+        padding-left: 1rem;
+        
+    }
+
+    .last_order p {
+        font-size: 14px;
+    }
+
+    .order .btn {
+        margin-top: 1rem;
+    }
+
+    .histogram__top h2 {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        width: 100%;
+    }
+
+    .logo svg {
+        height: 30px;
+        width: 30px;
+    }
+
+    .menu__link svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .menu, .others {
+        font-size: 13px;
+        margin-left: 1.5rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 100px auto;
+        width: 100%;
+    }
+
+    .name {
+        display: none;
+    }
+
+    .dashboard {
+        font-size: 22px;
+    }
+
+    .histogram__top {
+        padding: 0.6rem 0;
+    }
+
+    .histogram__top h2 {
+        font-size: 18px;
+    }
+
+    .middle__analytics p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+
+    .top {
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+
+    .sidebar-menu {
+        height: 86vh;
+        top: 3rem;
+      }
+
+    .left {
+        height: 100%;
+    }
+
+    .menu__title {
+        display: none;
+    }
+
+    .main__title {
+        margin-bottom: 0.1rem;
+    }
+
+    .active {
+        width: 60px;
+        margin-left: 20px;
+      }
+
+    .main {
+        padding: 1.3rem;
+    }
+
+    .main-top {
+        width: 100%;
+        height: 48px;
+    }
+
+    .main-top p {
+        font-size: 14px;
+    }
+
+    .main__grid {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .histogram_container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.5px solid #e4e6ee;
+        padding-bottom: 0rem;
+        padding-right: 0;
+    }
+
+    .histogram {
+        padding-right: 0rem;
+    }
+
+    .histogram p {
+        font-size: 15px;
+    }
+
+    .last {
+        padding: 0 0 10px 2px;
+        margin: 0 0 5px 0;
+    }
+
+    .date {
+        margin-bottom: 0;
+    }
+
+    .btn {
+        padding: 10px 15px !important;
+        font-size: 14px;
+    }
+
+    /* диаграмма */
+
+    .diagram-container {
+        grid-column: 1/3;
+        width: 100%;
+        margin-top: 0.2rem;
+        padding: 0 0 5px 5px;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+
+    .diagram svg {
+        
+        height: 250px;
+        width: 250px;
+    }
+    
+    .chart-info {
+        width: 80px;
+        height: 90px;
+    }
+
+    .container__diagram {
+        padding-top: 1rem;
+        padding-left: 1rem;
+    }
+    
+    .diagram__stuff-grid {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        margin-top: 0.1rem;
+    }
+
+    .diagram-container .btn {
+        margin-top: 12px;
+        margin: 0;
+    }
+
+    .info-box {
+        margin-left: -3rem;
+        margin-top: -4rem;
+        width: 150px;
+        height: 120px;
+    }
+
+    .info-box::before {
+        top: 104%;
+    }
+
+    .info-title {
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+
+    .time {
+        font-size: 14px;
+        padding-bottom: 5px
+    }
+
+    .orders {
+        font-size: 18px;
+        padding-bottom: 5px
+    }
+
+    .diagram__stuff-grid {
+        gap: 6rem;
+        padding: 10px 0;
+    }
+
+    .stuff_p {
+        font-size: 17px;
+    }
+
+    .perc {
+        font-size: 14px;
+    }
+
+    /* рейтинг */
+
+    .rating {
+        width: 100%;
+        grid-row: 3/4;
+        grid-column: 1/3;
+        padding: 0 0 1rem 5px;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+    
+    .rating__h2 {
+        font-size: 18px;
+        padding: 1rem 0;
+        margin-bottom: 0;
+    }
+
+    .rating-text {
+        font-size: 16px;
+    }
+
+    .circles {
+        display: flex;
+        justify-content: center;
+        padding-right: 1rem;
+    }
+
+    /* фуд */
+    .food {
+        grid-column: 1/3;
+        padding: 5px 0 1rem 0;
+        border: none;
+        width: 100%;
+        grid-row: 4/5;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+
+    .food__list {
+        padding: 1.5rem 0;
+    }
+
+    .food .rating__h2 {
+        padding-left: 0 !important;
+    }
+
+    .food__item {
+        grid-template-columns: 70px auto 1fr;
+    }
+
+    .food_pic img {
+        height: 70px;
+        width: 70px;
+    }
+    
+    .food__item h3, p {
+        font-weight: normal;
+    }
+    
+    .food__item h3 {
+        font-size: 16px;
+        padding-left: 1rem;
+    }
+    
+    .food__item p {
+        font-size: 16px;
+        margin-right: 1rem;
+    }
+
+    /* ордер */
+    .order {
+        width: 100%;
+        grid-row: 5/6;
+        grid-column: 1/3;
+        padding: 0 0 1rem 5px;
+        border-left: 0;
+    }
+
+    .order .histogram__middle p {
+        font-size: 16px;
+    }
+    
+    .order .btn {
+        margin-right: 0;
+    }
+
+    .chart_c p {
+        margin-top: 0.3rem;
+        font-size: 15px;
+    }
+
+    .chart_order {
+        justify-content: center;
+        gap: 40px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .bar {
+        width: 30px;
+    }
+    
+    .row {
+        gap: 55px;
+        justify-content: center;
+    }
+    
+    .last_order {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+
+    .last_order p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        width: 100%;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .left {
+        display: none;
+        position: fixed;
+        left: 0;
+        width: 18rem;
+        z-index: 3;
+        height: 100%;
+    }
+
+    .main-top {
+        width: 100%;
+        height: 48px;
+        position: relative;
+    }
+
+    .main-top p {
+        font-size: 15px;
+    }
+
+    /* КНОПКи */
+    #menu-btn {
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 0.6rem;
+        left: 1rem;
+        color: var(--dark-grey);
+    }
+
+    .logo {
+        gap: 1rem;
+    }
+
+    .logo svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu, .others {
+        font-size: 15px;
+    }
+
+    .menu__title {
+        font-size: 14px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .close {
+        display: inline-block;
+        cursor: pointer;
+        top: 1rem;
+        right: 1rem;
+        position: absolute;
+    }
+
+    .top {
+        margin-top: 3rem;
+        margin-left: 2rem;
+    }
+
+    .sidebar-menu {
+        height: 86vh;
+        top: 3rem;
+    }
+
+    .main__title {
+        margin-bottom: 0.1rem;
+    }
+
+    .active {
+        width: 200px;
+        margin-left: 20px;
+      }
+
+    .main {
+        padding: 1.3rem;
+        width: 100%;
+    }
+    .dashboard {
+        font-size: 22px;
+    }
+
+    .histogram__top {
+        padding: 0.6rem 0;
+    }
+
+    .histogram__top h2 {
+        font-size: 18px;
+    }
+
+    .middle__analytics p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+
+    .top {
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+
+    .main__grid {
+        grid-template-columns: auto;
+        flex-direction: column;
+    }
+
+    .histogram_container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.5px solid #e4e6ee;
+        padding-bottom: 0rem;
+        padding-right: 0;
+    }
+
+    .histogram {
+        padding-right: 0rem;
+    }
+
+    .histogram p {
+        font-size: 15px;
+    }
+
+    .last {
+        padding: 0 0 10px 2px;
+        margin: 0 0 5px 0;
+    }
+
+    .date {
+        margin-bottom: 0;
+    }
+
+    .btn {
+        padding: 10px 15px !important;
+        font-size: 14px;
+    }
+
+    /* диаграмма */
+
+    .diagram-container {
+        margin-top: 1rem;
+        padding: 0 0 5px 5px;
+        grid-column: 1/3;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+
+    .middle__analytics p {
+        font-size: 14px;
+    }
+
+    .histogram .chart p {
+        font-size: 14px;
+    }
+
+    .diagram svg {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .chart-info {
+        width: 90px;
+        height: 90px;
+    }
+
+    .container__diagram {
+        padding-top: 0;
+    }
+
+    .chart-info orders {
+        font-size: 6px;
+    }
+    
+    .diagram__stuff-grid {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+    }
+
+    .diagram__stuff__container {
+        padding-left: 1rem;
+    }
+
+    .diagram-container .btn {
+        margin-top: 12px;
+    }
+
+    .btn {
+        padding: 8px 13px;
+        margin-right: 1rem;
+        font-size: 14px;
+    }
+
+    /* рейтинг */
+
+    .rating {
+        width: 100%;
+        grid-row: 3/4;
+        grid-column: 1/3;
+        padding: 0 0 1rem 5px;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+    
+    .rating__h2 {
+        font-size: 18px;
+        padding: 1rem 0;
+        margin-bottom: 0;
+    }
+
+    .rating-text {
+        font-size: 16px;
+    }
+
+    .circles {
+        display: flex;
+        justify-content: center;
+        padding-right: 1rem;
+    }
+
+    /* фуд */
+
+    .food {
+        grid-column: 1/3;
+        padding: 5px 0 1rem 0;
+        border: none;
+        width: 100%;
+        grid-row: 4/5;
+        border-bottom: 0.5px solid #e4e6ee;
+    }
+
+    .food__list {
+        padding: 1.5rem 0;
+    }
+
+    .food .rating__h2 {
+        padding-left: 0 !important;
+    }
+
+    .food__item {
+        grid-template-columns: 70px auto 1fr;
+    }
+
+    .food_pic img {
+        height: 70px;
+        width: 70px;
+    }
+    
+    .food__item h3, p {
+        font-weight: normal;
+    }
+    
+    .food__item h3 {
+        font-size: 16px;
+        padding-left: 1rem;
+    }
+    
+    .food__item p {
+        font-size: 16px;
+        margin-right: 1rem;
+    }
+
+    /* ордер */
+    .order {
+        width: 100%;
+        grid-row: 5/6;
+        grid-column: 1/3;
+        padding: 0 0 1rem 5px;
+        border-left: 0;
+    }
+
+    .order .histogram__middle p {
+        font-size: 16px;
+    }
+    
+    .order .btn {
+        margin-right: 0;
+    }
+
+    .chart_c p {
+        margin-top: 0.3rem;
+        font-size: 15px;
+    }
+
+    .chart_order {
+        justify-content: center;
+        gap: 40px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .bar {
+        width: 30px;
+    }
+    
+    .row {
+        gap: 55px;
+        justify-content: center;
+    }
+    
+    .last_order {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+
+    .last_order p {
+        font-size: 15px;
+    }
+}
